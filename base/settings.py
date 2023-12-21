@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "public"
 ]
 
-STATIC_ROOT = "/home/mhabibiw/public_html/static"
+STATIC_ROOT = "/home/mhabibiw/domains/mhabibiwasi.my.id/public_html/static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
