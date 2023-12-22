@@ -1,15 +1,18 @@
-import { useState } from "react";
-
-const reactLogo = "react.svg";
-const viteLogo = "vite.svg";
-
-const reactLogoPath = `/static/${reactLogo}`;
-const viteLogoPath = `/static/${viteLogo}`;
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import NavbarDesktop from "./pages/Home/components/NavbarDesktop";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  return (
+    <div className="bg-white">
+      <BrowserRouter>
+        <NavbarDesktop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
