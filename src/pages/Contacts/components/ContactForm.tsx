@@ -7,7 +7,7 @@ const ContactForm = () => {
   const [errors, setError] = useState<{ fullname: []; email: []; message: [] }>();
   const handleSubmit = (e: any) => {
     e.preventDefault();
-
+    console.log(e.target.fullname);
     const response = new Promise((resolve, reject) => {
       return fetch("/api/send-message/", {
         method: "POST",
@@ -31,7 +31,7 @@ const ContactForm = () => {
           }
         })
         .then((data) => setError(data))
-        .catch((e) => reject(e));
+        .catch((e) => console.log(e));
     });
     toast.promise(response, {
       pending: "Sending.....",
@@ -53,9 +53,7 @@ const ContactForm = () => {
         <FormInput errors={errors?.email}>Email</FormInput>
         <FormInput errors={errors?.message}>Message</FormInput>
       </div>
-      <button type="submit" className="mt-12 bg-primary-100 px-4 py-2 rounded-md text-primary-700 hover:bg-white hover:border-primary-400 border transition-all duration-300">
-        {t("Send")}
-      </button>
+      <button className="mt-12 bg-primary-100 px-4 py-2 rounded-md text-primary-700 hover:bg-white hover:border-primary-400 border transition-all duration-300">{t("Send")}</button>
     </form>
   );
 };
