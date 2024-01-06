@@ -25,7 +25,7 @@ const ContactForm = () => {
             e.target.reset();
             resolve(res);
           } else {
-            console.log(res.statusText);
+            console.log(res);
             reject(res.statusText);
             return res.json();
           }
