@@ -7,7 +7,6 @@ const ContactForm = () => {
   const [errors, setError] = useState<{ fullname: []; email: []; message: [] }>();
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(e.target.fullname);
     const response = new Promise((resolve, reject) => {
       return fetch("/api/send-message/", {
         method: "POST",
@@ -26,6 +25,7 @@ const ContactForm = () => {
             e.target.reset();
             resolve(res);
           } else {
+            console.log(res.statusText);
             reject(res.statusText);
             return res.json();
           }
