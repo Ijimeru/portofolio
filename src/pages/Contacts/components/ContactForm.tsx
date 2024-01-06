@@ -25,7 +25,6 @@ const ContactForm = () => {
             e.target.reset();
             resolve(res);
           } else {
-            console.log(res);
             reject(res.statusText);
             return res.json();
           }
@@ -38,8 +37,7 @@ const ContactForm = () => {
       success: `The message has been sent`,
       error: {
         render(data: any) {
-          console.log(data);
-          return <div>{data.data}</div>;
+          return <div>Message was not sent</div>;
         },
       },
     });
