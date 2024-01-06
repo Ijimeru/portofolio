@@ -31,13 +31,14 @@ const ContactForm = () => {
           }
         })
         .then((data) => setError(data))
-        .catch((e) => console.log(e));
+        .catch((e) => reject(e));
     });
     toast.promise(response, {
       pending: "Sending.....",
       success: `The message has been sent`,
       error: {
         render(data: any) {
+          console.log(data);
           return <div>{data.data}</div>;
         },
       },

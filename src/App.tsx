@@ -10,7 +10,6 @@ import i18n from "./i18n";
 
 function App() {
   useEffect(() => {
-    console.log(navigator.language);
     i18n.changeLanguage(navigator.language);
   }, []);
   return (
